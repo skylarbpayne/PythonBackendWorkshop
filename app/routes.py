@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import redirect
 from flask import url_for
+from flask import request
 
 app = Flask(__name__)
 
@@ -30,7 +31,7 @@ def new_form():
 
 @app.route('/new', methods=['POST'])
 def new_form_post():
-    #Processing stuff
+    ideas.append({'author': request.form['author'], 'idea': request.form['idea']})
     return redirect(url_for('index'))
 
 if __name__ == "__main__":
