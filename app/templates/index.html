@@ -3,6 +3,9 @@
 		<title>All The Ideas</title>
 	</head>
 	<body>
-		<h1>Hello, World!</h1>
+		<h1>Ideas</h1>
+		{% for idea in ideas %}
+			<div><p>"{{ idea.idea }}"</p><p>- {{ idea.author }}</p></div>
+		{% endfor %}
 	</body>
 </html>
